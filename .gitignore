@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.claude/
+screenshot.js
+package.json
+package-lock.json
+*.md

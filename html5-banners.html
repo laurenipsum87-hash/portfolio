@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 Banners - Lauren Moses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="wd.css" />
+  <style>/* nav-btn-override */
+    .btn-contact { background: transparent !important; border: 1px solid rgba(255,255,255,0.55) !important; color: #fff !important; }
+    .top-nav.light .btn-contact { border-color: rgba(0,0,0,0.25) !important; color: var(--black) !important; }
+  </style>
+  <style>
+    .wd-hero-bg { background: url('work-images/HTML5 Banners/cover.jpg') center/cover no-repeat; }
+
+    /* Videos - natural size, no crop */
+    .video-natural {
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .video-natural video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Live banner iframes - exact pixel sizes, no scaling */
+    .banners-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .banner-frame {
+      background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .banner-frame iframe {
+      display: block;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="cursor-dot"></div><div id="cursor-ring"></div>
+  <nav class="top-nav">
+    <a href="index.html" class="top-nav-name"><strong>Lauren Moses</strong><span>Senior Creative</span></a>
+    <a href="index.html#portfolio" class="top-nav-back"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12L6 8l4-4"/></svg><span class="wdn-long">All Work</span><span class="wdn-short">Work</span></a>
+    <a href="resume.pdf" download class="btn-contact"><span class="wdn-long">Download Resume</span><span class="wdn-short">Resume</span></a>
+  </nav>
+
+  <section class="wd-hero">
+    <div class="wd-hero-bg" id="wdHeroBg"></div>
+    <div class="wd-hero-content">
+      <div class="wd-category">Motion · Display Advertising</div>
+      <h1 class="wd-hero-title">HTML5 Banner Ads - Interactive Display</h1>
+      <div class="wd-hero-meta">
+        <div class="wd-meta-item"><div><span class="label">Tools</span>HTML5 · CSS3 · JS · Adform · Figma</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wd-body">
+    <div class="wd-intro reveal">
+      <div class="wd-intro-left">
+        <div class="wd-intro-eyebrow">Project Overview</div>
+        <div class="wd-meta-list">
+          <div class="wd-meta-row"><span class="lbl">Category</span><span class="val">Interactive Display Advertising</span></div>
+          <div class="wd-meta-row"><span class="lbl">Tools</span><span class="val">HTML5 · CSS3 · JavaScript · Adform · Figma · Photoshop</span></div>
+        </div>
+        <div class="wd-tags">
+          <span class="wd-tag">HTML5</span><span class="wd-tag">CSS Animation</span><span class="wd-tag">Adform</span><span class="wd-tag">Display Ads</span>
+        </div>
+      </div>
+      <div class="wd-intro-right">
+        <h2 class="wd-intro-heading">Production-ready display ads, frame-perfect.</h2>
+        <p class="wd-intro-body">A collection of animated HTML5 display banners built for Adform - production-ready, self-contained, and optimised to the 300KB file limit. Each banner features CSS-powered animations, clickTAG integration and loops continuously across multiple frames.</p>
+      </div>
+    </div>
+
+    <hr class="wd-divider" />
+
+    <div class="wd-gallery">
+      <div class="reveal">
+        <!-- 300×250 row -->
+        <div class="banners-row">
+          <div class="banner-frame">
+            <iframe src="https://venerable-longma-ef455f.netlify.app/" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="banner-frame">
+            <iframe src="https://neon-faun-7273e2.netlify.app/" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="banner-frame">
+            <iframe src="https://lighthearted-kitten-eae90f.netlify.app/" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- 300×600 row -->
+        <div class="banners-row">
+          <div class="banner-frame">
+            <iframe src="https://sweet-chebakia-7ccb4b.netlify.app/" width="300" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="banner-frame">
+            <iframe src="https://rad-bavarois-bbcbff.netlify.app/" width="300" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="wd-divider" />
+
+    <div class="wd-gallery">
+      <div class="wd-gallery-row cols-2 reveal">
+        <div class="video-natural">
+          <video autoplay muted loop playsinline src="work-images/HTML5 Banners/Mercedes.mp4"></video>
+        </div>
+        <div class="video-natural">
+          <video autoplay muted loop playsinline src="work-images/HTML5 Banners/Mercedes_rhv.mp4"></video>
+        </div>
+      </div>
+      <div class="wd-gallery-row cols-2 reveal">
+        <div class="video-natural">
+          <video autoplay muted loop playsinline src="work-images/HTML5 Banners/X-Trail_R1_728.mp4"></video>
+        </div>
+        <div class="video-natural">
+          <video autoplay muted loop playsinline src="work-images/HTML5 Banners/np300_R1.mp4"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wd-next"><div class="wd-next-inner">
+    <div class="wd-next-label">More Work</div>
+    <div class="wd-next-title">Ready to see what else I've built?</div>
+    <a href="index.html#portfolio" class="wd-back-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14L3 9l5-5M3 9h12"/></svg>Back to All Work</a>
+  </div></div>
+
+  <script src="work-detail.js"></script>
+</body>
+</html>

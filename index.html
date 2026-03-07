@@ -1,0 +1,2977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <!-- Instant hash jump - bypasses smooth-scroll so #portfolio lands without animating from top -->
+  <script>
+    if (location.hash) {
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.addEventListener('load', function() {
+        var el = document.querySelector(location.hash);
+        if (el) el.scrollIntoView();
+        document.documentElement.style.scrollBehavior = '';
+      }, { once: true });
+    }
+  </script>
+  <!-- figma-capture-overrides removed - animations restored -->
+  <title>Lauren Moses - Senior Digital & Marketing Designer | Johannesburg</title>
+  <meta name="description" content="Senior Digital & Marketing Designer with 15+ years across brand, motion, web, and campaign design. Currently designing for a U.S. SaaS fintech. Based in Johannesburg." />
+  <meta name="keywords" content="senior designer, digital designer, marketing designer, brand design, motion graphics, UI design, Webflow, Figma, After Effects, Johannesburg, South Africa, SaaS, fintech, portfolio" />
+  <meta name="author" content="Lauren Moses" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / LinkedIn / Slack previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.laurenmoses.com/" />
+  <meta property="og:title" content="Lauren Moses - Senior Digital & Marketing Designer" />
+  <meta property="og:description" content="15+ years across brand, motion, web, and campaign design. Portfolio of work for Google, MTN, FNB, Nissan, Hollard and more." />
+  <meta property="og:image" content="https://www.laurenmoses.com/Images/og-cover.jpg" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lauren Moses - Senior Digital & Marketing Designer" />
+  <meta name="twitter:description" content="15+ years across brand, motion, web, and campaign design." />
+  <meta name="twitter:image" content="https://www.laurenmoses.com/Images/og-cover.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --black: #0f0f0f;
+      --gray-50: #f7f7f7;
+      --gray-100: #efefef;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --orange: #f97316;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    a, button, [role="button"], .portfolio-item, .bento-card, .accordion-trigger, .tdk-card { cursor: none; }
+
+    /* ──────────────────── TOP NAV ──────────────────── */
+    @keyframes navDrop {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      opacity: 0;
+      animation: navDrop 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+      /* Liquid glass - dark default */
+      background: rgba(6, 13, 13, 0.45);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.3);
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    /* Light glass - over white/light sections */
+    .top-nav.light {
+      background: rgba(250, 251, 250, 0.80);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .top-nav.light .top-nav-name { color: var(--black); }
+    .top-nav.light .top-nav-name strong { color: var(--black); }
+    .top-nav.light .top-nav-name span { color: var(--gray-600); }
+
+    .top-nav-name {
+      text-decoration: none;
+      color: var(--white);
+      transition: color 0.35s ease;
+    }
+
+    .top-nav-name strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .top-nav-name span {
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.7;
+      letter-spacing: 0.04em;
+    }
+
+    .top-nav-icon {
+      color: var(--white);
+      opacity: 0.8;
+    }
+
+    .btn-contact {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 40px;
+      transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+    }
+
+    .btn-contact:hover { background: rgba(255,255,255,0.08); }
+
+    /* ──────────────────── HERO ──────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      background: #060d0d url('Images/gradient.webp') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    /* ── Hero entrance keyframes ── */
+    /* Portrait & title: opacity ONLY - JS owns their transform for parallax */
+    @keyframes heroFadeIn   { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes heroTitleIn  { from { opacity: 0; } to { opacity: 0.13; } }
+    /* Masked slide-up - shared with footer */
+    @keyframes maskSlideUp {
+      from { transform: translateY(110%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+    .hero-mask-line {
+      display: block;
+      overflow-y: clip;
+      overflow-x: visible;
+    }
+    .hero-mask-word {
+      display: block;
+      white-space: nowrap;
+      transform: translateY(110%);
+      opacity: 0;
+      animation: maskSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(100px, 18vw, 260px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      opacity: 0;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      user-select: none;
+      will-change: transform;
+      animation: heroTitleIn 1.2s ease 0.9s forwards;
+    }
+
+    .hero-tagline {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      width: 75%;
+      text-align: left;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-label-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .hero-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    .ht-pill {
+      display: inline-block;
+      border: 1px solid rgba(214,251,0,0.45);
+      border-radius: 40px;
+      padding: 7px 18px;
+      background: rgba(214,251,0,0.04);
+      opacity: 0;
+      animation: maskSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+    .hero-tagline .ht-label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(12px, 1.1vw, 16px);
+      font-weight: 600;
+      color: #d6fb00;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-tagline p {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(48px, 7.5vw, 108px);
+      font-weight: 800;
+      color: rgba(255,255,255,0.95);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+    }
+
+    /* Corner brackets decoration */
+    .hero-bracket {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: rgba(214,251,0,0.6);
+      border-style: solid;
+      border-width: 0;
+    }
+    .hero-bracket.tl { top: 100px; left: 40px; border-top-width: 2px; border-left-width: 2px; }
+    .hero-bracket.tr { top: 100px; right: 40px; border-top-width: 2px; border-right-width: 2px; }
+    .hero-bracket.bl { bottom: 120px; left: 40px; border-bottom-width: 2px; border-left-width: 2px; }
+    .hero-bracket.br { bottom: 120px; right: 40px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    /* ── Hero gravity pills ── */
+    #heroPhysics {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      overflow: hidden;
+      pointer-events: none; /* container passes through scroll/clicks */
+    }
+    .gravity-pill {
+      position: absolute;
+      padding: 22px 48px;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(22px, 2.4vw, 32px);
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: auto;  /* pills ARE interactive */
+      cursor: grab;
+      will-change: transform;
+      letter-spacing: -0.01em;
+    }
+    .gravity-pill:active { cursor: grabbing; }
+    .gravity-pill.dark {
+      background: rgba(6, 40, 45, 0.88);
+      color: #c8e8e4;
+      border: 1px solid rgba(0, 188, 150, 0.28);
+      backdrop-filter: blur(12px);
+    }
+    .gravity-pill.lime {
+      background: #d6fb00;
+      color: #0a1a0a;
+    }
+    .gravity-pill.teal {
+      background: #0abc96;
+      color: #fff;
+    }
+
+    /* ──────────────────── SOCIAL PROOF ──────────────────── */
+    .social-proof {
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .social-proof::before,
+    .social-proof::after {
+      content: '';
+      position: absolute;
+      top: 80px;
+      width: 120px;
+      height: 120px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none'%3E%3Cpath d='M50 5 C30 5 10 20 8 40 C6 55 15 65 25 70 C15 75 5 85 5 100 C5 115 20 120 35 115 L50 108 L65 115 C80 120 95 115 95 100 C95 85 85 75 75 70 C85 65 94 55 92 40 C90 20 70 5 50 5Z' fill='%23e5e7eb' opacity='0.4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.3;
+    }
+    .social-proof::before { left: calc(50% - 380px); }
+    .social-proof::after { right: calc(50% - 380px); transform: scaleX(-1); }
+
+    .avatars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      overflow: hidden;
+      margin-left: -10px;
+    }
+
+    .avatar:first-child { margin-left: 0; }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .star {
+      color: var(--orange);
+      font-size: 22px;
+    }
+
+    .social-proof h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .social-proof p {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ──────────────────── PHILOSOPHY (PARALLAX) ──────────────────── */
+    .philosophy-section {
+      position: relative;
+      height: 380vh;
+    }
+
+    .philosophy-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .philosophy-text-wrap {
+      text-align: center;
+      z-index: 3;
+      padding: 0 24px;
+      max-width: 900px;
+      pointer-events: none;
+    }
+
+    .pill-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 40px;
+      padding: 6px 16px;
+      margin-bottom: 28px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+    }
+
+    .philosophy-text {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 4.5vw, 58px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--black);
+    }
+
+    .philosophy-text .faded {
+      color: var(--gray-400);
+    }
+
+    .philosophy-credit {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-top: 32px;
+    }
+
+    /* Parallax images */
+    .para-img {
+      position: absolute;
+      will-change: transform, opacity;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      opacity: 0;
+    }
+
+    .para-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .para-left-1  { left: 3%;  top: 10%; width: 190px; height: 180px; z-index: 2; }
+    .para-right-1 { right: 3%; top: 13%; width: 195px; height: 180px; z-index: 2; }
+    .para-left-2  { left: 0%;  top: 34%; width: 180px; height: 180px; z-index: 2; }
+    .para-right-2 { right: 0%; top: 37%; width: 200px; height: 180px; z-index: 2; }
+    .para-left-3  { left: 3%;  top: 59%; width: 175px; height: 180px; z-index: 2; }
+    .para-right-3 { right: 3%; top: 62%; width: 190px; height: 180px; z-index: 2; }
+
+    /* ──────────────────── SERVICES ──────────────────── */
+    .services-wrapper {
+      background: #060d0d url('Images/gradient.webp') center/cover no-repeat;
+    }
+    .services-section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .services-left .pill-badge { margin-bottom: 20px; border-color: rgba(214,251,0,0.5); color: #d6fb00; background: transparent; }
+
+    .services-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .services-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+      max-width: 400px;
+    }
+
+    .services-includes {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .check-list li::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: #d6fb00;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%23060d0d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+    }
+
+    .btn-pill {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      background: #0abc96;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 40px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .btn-pill:hover { box-shadow: 0 0 28px rgba(10,188,150,0.4); transform: translateY(-1px); }
+
+    .service-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .service-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px;
+      transition: background 0.2s, transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .service-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+
+    .service-icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      background: #d6fb00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .service-icon-box svg {
+      width: 28px;
+      height: 28px;
+      stroke: #060d0d;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-card-text h4 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .service-card-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* ──────────────────── BENEFITS ──────────────────── */
+    .benefits-section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .benefits-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .benefits-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .benefits-body {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 300px 207px;
+      gap: 12px;
+    }
+
+    .bento-card {
+      background: #060d0d url('Images/gradient.webp') center/cover no-repeat;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    .bento-card:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 40px rgba(214,251,0,0.06);
+    }
+
+    .bento-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--white);
+    }
+
+    .bento-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .bento-card.wide { grid-column: span 2; }
+    .bento-card.tall { grid-row: span 2; }
+
+    /* Darker alternating cards — no gradient, flat dark */
+    .bento-grid > .bento-card:nth-child(even) {
+      background: #0b1a1a;
+    }
+
+    /* Bento stars — staggered bounce pop-in */
+    .bento-stars {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+    .bento-stars span {
+      color: #d6fb00;
+      font-size: 18px;
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0) rotate(-25deg);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    }
+    .bento-card.visible .bento-stars span:nth-child(1) { opacity: 1; transform: scale(1) rotate(0deg); transition-delay: 0.15s; }
+    .bento-card.visible .bento-stars span:nth-child(2) { opacity: 1; transform: scale(1) rotate(0deg); transition-delay: 0.28s; }
+    .bento-card.visible .bento-stars span:nth-child(3) { opacity: 1; transform: scale(1) rotate(0deg); transition-delay: 0.41s; }
+    .bento-card.visible .bento-stars span:nth-child(4) { opacity: 1; transform: scale(1) rotate(0deg); transition-delay: 0.54s; }
+    .bento-card.visible .bento-stars span:nth-child(5) { opacity: 1; transform: scale(1) rotate(0deg); transition-delay: 0.67s; }
+    /* subtle twinkle after appearing */
+    @keyframes star-pulse {
+      0%, 100% { text-shadow: 0 0 0px #d6fb00; }
+      50% { text-shadow: 0 0 8px rgba(214,251,0,0.7); }
+    }
+    .bento-card.visible .bento-stars span { animation: star-pulse 2.5s ease-in-out infinite; }
+    .bento-card.visible .bento-stars span:nth-child(1) { animation-delay: 0.8s; }
+    .bento-card.visible .bento-stars span:nth-child(2) { animation-delay: 1.0s; }
+    .bento-card.visible .bento-stars span:nth-child(3) { animation-delay: 1.2s; }
+    .bento-card.visible .bento-stars span:nth-child(4) { animation-delay: 1.4s; }
+    .bento-card.visible .bento-stars span:nth-child(5) { animation-delay: 1.6s; }
+
+    /* Keep lime card text from going behind headshot */
+    .bento-card.lime p {
+      max-width: 46%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Headshot slide-up in lime card */
+    .bento-headshot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55%;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom right;
+      border-radius: 0 0 var(--radius-md) 0;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, opacity 0.6s ease 0.4s;
+    }
+    .bento-card.visible .bento-headshot {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Flush bottom-right card image — slides in from right on reveal */
+    .bento-img-flush {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 90%;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom right;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(60px);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s, opacity 0.6s ease 0.35s;
+    }
+    .bento-card.visible .bento-img-flush {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── Card Stack ── */
+    .card-stack-wrap {
+      position: relative;
+      width: 100%;
+      height: 185px;
+      margin-top: 14px;
+      user-select: none;
+    }
+    .cs-card {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 88%;
+      height: 150px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      will-change: transform;
+      transition: transform 0.55s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .cs-card[data-pos="0"] { transform: translateX(-50%) translateY(0px)  scale(1);    z-index: 3; }
+    .cs-card[data-pos="1"] { transform: translateX(-50%) translateY(-14px) scale(0.94); z-index: 2; }
+    .cs-card[data-pos="2"] { transform: translateX(-50%) translateY(-28px) scale(0.88); z-index: 1; }
+    .cs-card[data-pos="enter"] { transform: translateX(-50%) translateY(-28px) scale(0.88); z-index: 0; opacity: 0; }
+    .cs-card[data-pos="exit"]  { transform: translateX(-50%) translateY(300px) scale(1);  z-index: 4; opacity: 0; }
+    .cs-card img {
+      width: 100%; height: 88px; object-fit: cover; display: block; pointer-events: none;
+    }
+    .cs-card-label {
+      flex: 1;
+      padding: 0 12px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .cs-card-label strong {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+      color: #0d1111; letter-spacing: -0.01em;
+    }
+    .cs-card-label span {
+      font-size: 11px; color: rgba(0,0,0,0.4);
+    }
+
+    .bento-card-img {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .bento-card-img img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bento-stat {
+      font-family: 'Syne', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #d6fb00;
+    }
+
+    .bento-avatars {
+      display: flex;
+      margin-top: 12px;
+    }
+
+    .bento-avatars .avatar {
+      width: 32px;
+      height: 32px;
+    }
+
+    .clock-img {
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      width: 100px;
+      height: 100px;
+      opacity: 0.15;
+    }
+
+    /* ──────────────────── PORTFOLIO ──────────────────── */
+    .portfolio-section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .portfolio-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-desc {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 480px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .featured-on {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+
+    .featured-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+
+    .featured-logos span {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: -0.02em;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .portfolio-filter-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 40px;
+      padding: 6px 16px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .portfolio-filter-btn:hover,
+    .portfolio-filter-btn.active { background: var(--black); color: var(--white); border-color: var(--black); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: none;
+      display: block;
+      text-decoration: none;
+      transition: transform 0.4s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 164px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover img { transform: scale(1.03); }
+
+    /* Hover overlay - hidden by default, revealed on hover */
+    .portfolio-item-meta {
+      position: absolute;
+      inset: 0;
+      padding: 20px;
+      background: rgba(6, 13, 13, 0);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: background 0.35s ease;
+    }
+
+    .portfolio-item:hover .portfolio-item-meta {
+      background: rgba(6, 13, 13, 0.72);
+    }
+
+    .portfolio-item-meta h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-item-meta h3 {
+      opacity: 1;
+      transform: none;
+    }
+
+    .portfolio-item-meta span {
+      font-size: 11px;
+      opacity: 0;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      transform: translateY(8px);
+      transition: opacity 0.3s ease 0.04s, transform 0.3s ease 0.04s;
+    }
+
+    .portfolio-item:hover .portfolio-item-meta span {
+      opacity: 1;
+      transform: none;
+    }
+
+    .bracket-tl, .bracket-tr, .bracket-bl, .bracket-br { display: none; }
+
+    /* ──────────────────── TESTIMONIALS ──────────────────── */
+    .testimonials-section {
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      padding: 0 40px;
+      margin-bottom: 48px;
+    }
+
+    .testimonials-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .testimonials-desc {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 16px;
+      padding: 0 40px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .testimonials-track::-webkit-scrollbar { display: none; }
+
+    .testimonial-card {
+      flex-shrink: 0;
+      width: 360px;
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-stars span { color: var(--orange); font-size: 16px; }
+
+    .testimonial-quote {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--gray-600);
+      margin-bottom: 16px;
+    }
+
+    .testimonial-quote strong { color: var(--black); font-weight: 600; }
+
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    /* ──────────────────── BLOG ──────────────────── */
+    .blog-section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .blog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .blog-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .blog-desc {
+      font-size: 14px;
+      color: var(--gray-600);
+      max-width: 300px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .btn-outline {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      border: 1.5px solid rgba(0,0,0,0.2);
+      border-radius: 40px;
+      padding: 9px 20px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--black); background: var(--gray-50); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .blog-card-main {
+      grid-column: span 1;
+      position: relative;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--black);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .blog-img {
+      width: 100%;
+      height: 240px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .blog-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .blog-card-main:hover .blog-img img { transform: scale(1.03); }
+
+    .blog-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: var(--black);
+      display: block;
+    }
+
+    .blog-card-title:hover { opacity: 0.7; }
+
+    .blog-card-meta {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    /* ──────────────────── CONTACT FOOTER ──────────────────── */
+    .contact-footer {
+      position: relative;
+      background: #060d0d;
+      background-image:
+        radial-gradient(ellipse at 15% 65%, rgba(0, 84, 95, 0.55) 0%, transparent 52%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 140, 90, 0.1) 0%, transparent 45%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .cf-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 86vh;
+    }
+
+    .cf-left {
+      position: relative;
+      padding: 80px 64px 80px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .cf-left::before, .cf-left::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.07);
+      pointer-events: none;
+    }
+    .cf-left::before { width: 560px; height: 560px; top: 50%; left: -230px; transform: translateY(-50%); }
+    .cf-left::after  { width: 820px; height: 820px; top: 50%; left: -370px; transform: translateY(-50%); }
+
+    .cf-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(44px, 6.2vw, 86px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      will-change: transform;
+    }
+
+    /* Line clip so words slide up from below */
+    .cf-line {
+      display: block;
+      overflow-y: clip;
+      overflow-x: visible;
+    }
+
+    .cf-word {
+      display: block;
+      transform: translateY(110%);
+      opacity: 0;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    }
+
+    /* Stagger each line */
+    .cf-line:nth-child(1) .cf-word { transition-delay: 0s; }
+    .cf-line:nth-child(2) .cf-word { transition-delay: 0.12s; }
+    .cf-line:nth-child(3) .cf-word { transition-delay: 0.24s; }
+
+    .cf-sub-anim {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+    }
+
+    /* Triggered state */
+    .cf-headline.in-view .cf-word { transform: translateY(0); opacity: 1; }
+    .cf-sub-anim.in-view { opacity: 1; transform: translateY(0); }
+
+    .cf-dot { color: #d6fb00; }
+
+    .cf-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cf-right {
+      padding: 80px 40px 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 36px;
+    }
+
+    .cf-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cf-avatar {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.12);
+    }
+
+    .cf-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .cf-profile-info strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+
+    .cf-profile-info > span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .cf-socials { display: flex; gap: 10px; margin-top: 10px; }
+
+    .cf-social-link {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cf-social-link:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+    .cf-divider { height: 1px; background: rgba(255,255,255,0.07); }
+
+    .cf-contact-block { display: flex; flex-direction: column; gap: 14px; }
+
+    .cf-contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .cf-email {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(13px, 1.5vw, 20px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: white;
+      text-decoration: none;
+      line-height: 1.15;
+      display: block;
+      transition: color 0.2s;
+    }
+    .cf-email:hover { color: #d6fb00; }
+
+    .cf-contact-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.4);
+      max-width: 380px;
+    }
+    .cf-contact-desc strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+
+    .cf-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0abc96;
+      color: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 24px 14px 28px;
+      border-radius: 40px;
+      width: fit-content;
+      box-shadow: 0 0 40px rgba(10, 188, 150, 0.28);
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+    .cf-cta:hover { box-shadow: 0 0 64px rgba(10, 188, 150, 0.5); transform: translateY(-1px); }
+
+    .cf-cta-arrow {
+      width: 28px; height: 28px;
+      background: rgba(0,0,0,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      color: #d6fb00;
+    }
+
+    .cf-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .cf-bar-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    .cf-bar-love { font-size: 12px; color: rgba(255,255,255,0.25); display: flex; align-items: center; gap: 5px; }
+    .cf-heart { width: 14px; height: 14px; color: #d6fb00; animation: heartbeat 1.4s ease-in-out infinite; }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.25); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      56% { transform: scale(1); }
+    }
+
+    .cf-bar-links { display: flex; gap: 20px; }
+    .cf-bar-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cf-bar-links a:hover { color: rgba(255,255,255,0.65); }
+
+    /* ──────────────────── FLOATING BOTTOM NAV ──────────────────── */
+    .floating-nav {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 500;
+      background: #111111;
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      white-space: nowrap;
+    }
+
+    .floating-nav-icon { display: none; }
+
+    .floating-nav a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 40px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .floating-nav a:hover {
+      color: white;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ──────────────────── REVEAL ──────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(6px);
+      transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ──────────────────── PHILOSOPHY WORD BLUR ──────────────────── */
+    .philosophy-word {
+      display: inline-block;
+      transition: filter 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      filter: blur(14px);
+      opacity: 0.12;
+    }
+    .philosophy-word.faded-word { color: var(--gray-400); }
+
+    /* ──────────────────── BENTO IMAGE ENTRANCE ──────────────────── */
+    .bento-card-img img {
+      transform: translateY(30px) scale(1.07);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+    .bento-card.visible .bento-card-img img {
+      transform: translateY(0) scale(1);
+    }
+
+    /* ──────────────────── DARK TOOLKIT ──────────────────── */
+    .tools-dark-section {
+      position: relative;
+      background: #060d0d;
+      background-image:
+        radial-gradient(ellipse at 75% 55%, rgba(0, 84, 95, 0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 30%, rgba(0, 110, 80, 0.1) 0%, transparent 45%);
+      padding: 80px 0 100px;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    .tools-dark-header {
+      padding: 0 40px;
+      margin-bottom: 52px;
+      display: flex;
+      align-items: flex-end;
+      gap: 60px;
+    }
+    .tools-dark-intro {
+      max-width: 720px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      padding-bottom: 6px;
+      flex-shrink: 1;
+    }
+    .tools-dark-intro strong {
+      color: #d6fb00;
+      font-weight: 600;
+    }
+
+    .pill-badge-dark {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #d6fb00;
+      border: 1px solid rgba(214,251,0,0.4);
+      border-radius: 40px;
+      padding: 5px 14px;
+      margin-bottom: 16px;
+    }
+
+    .tools-dark-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: white;
+    }
+
+    /* Marquee */
+    .tools-marquee-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tools-marquee-wrap::before,
+    .tools-marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 160px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .tools-marquee-wrap::before { left: 0;  background: linear-gradient(to right, #060d0d, transparent); }
+    .tools-marquee-wrap::after  { right: 0; background: linear-gradient(to left,  #060d0d, transparent); }
+
+    .tools-marquee-track {
+      display: flex;
+      gap: 14px;
+      padding: 8px 40px 20px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    /* Marquee nav buttons */
+    .tools-nav {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+      align-self: flex-end;
+      padding-bottom: 6px;
+      flex-shrink: 0;
+    }
+    .tools-nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .tools-nav-btn:hover {
+      background: rgba(214,251,0,0.08);
+      border-color: rgba(214,251,0,0.5);
+      color: #d6fb00;
+    }
+
+    /* Cards */
+    .tdk-card {
+      flex-shrink: 0;
+      width: 175px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 28px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: background 0.25s, border-color 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+      cursor: none;
+    }
+
+    .tdk-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-6px);
+    }
+
+    .tdk-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: grayscale(1) brightness(2);
+      transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .tdk-icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .tdk-card:hover .tdk-icon { filter: none; }
+    .logo-force-white { filter: brightness(0) invert(1); }
+    .tdk-card:hover .logo-force-white { filter: brightness(0) invert(1); }
+
+    .tdk-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .tdk-type {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.3;
+    }
+
+    /* Custom cursor - dot */
+    .cursor-dot {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #d6fb00;
+      pointer-events: none;
+      z-index: 10000;
+      left: 0; top: 0;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s, width 0.15s, height 0.15s, background 0.2s;
+      will-change: transform;
+    }
+    .cursor-dot.on { opacity: 1; }
+    .cursor-dot.hover { width: 10px; height: 10px; background: #ffffff; }
+
+    /* Custom cursor - circle */
+    .tdk-cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(214, 251, 0, 0.12);
+      border: 1.5px solid rgba(214, 251, 0, 0.6);
+      pointer-events: none;
+      z-index: 9999;
+      left: 0; top: 0;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s, width 0.25s cubic-bezier(0.25,0.46,0.45,0.94), height 0.25s cubic-bezier(0.25,0.46,0.45,0.94), background 0.25s, border-color 0.25s;
+      will-change: transform;
+    }
+    .tdk-cursor.on { opacity: 1; }
+    .tdk-cursor.big { width: 64px; height: 64px; background: rgba(214,251,0,0.18); border-color: rgba(214,251,0,0.8); }
+    .tdk-cursor.hover { width: 56px; height: 56px; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
+    .tdk-cursor.dark { background: rgba(214,251,0,0.15); border-color: rgba(214,251,0,0.7); }
+
+    /* ──────────────────── FAQ ──────────────────── */
+    .faq-section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .faq-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .faq-left .pill-badge { margin-bottom: 20px; }
+
+    .faq-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .faq-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-600);
+      max-width: 340px;
+      margin-bottom: 36px;
+    }
+
+    .faq-media {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: var(--gray-100);
+    }
+
+    .faq-media img,
+    .faq-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .faq-media img { animation: kenBurns 14s ease-in-out infinite alternate; }
+
+    @keyframes kenBurns {
+      from { transform: scale(1)    translate(0%,  0%); }
+      to   { transform: scale(1.09) translate(-2%, -2%); }
+    }
+
+    /* Accordion */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 4px;
+    }
+
+    .accordion-item {
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--gray-100);
+      background: var(--gray-50);
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .accordion-item.open {
+      border-color: var(--gray-100);
+      background: var(--white);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+      letter-spacing: -0.01em;
+    }
+
+    .accordion-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--gray-600);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s, color 0.2s;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+      background: #d6fb00;
+      color: #060d0d;
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .accordion-item.open .accordion-body { max-height: 400px; }
+
+    .accordion-content {
+      padding: 0 22px 22px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--gray-600);
+    }
+
+    /* Nav CTA group */
+    .nav-ctas { display: flex; gap: 8px; align-items: center; }
+    .nav-work-btn { display: none; }
+    .btn-full-text { display: inline; }
+    .btn-short-text { display: none; }
+
+    @media (max-width: 900px) {
+      .services-section { grid-template-columns: 1fr; gap: 48px; }
+      .bento-grid { grid-template-columns: 1fr 1fr; }
+      .bento-card.wide { grid-column: span 2; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card-main { grid-column: span 1; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding-bottom: 100px; }
+      .para-left-1, .para-left-2, .para-right-1, .para-right-2 { display: none; }
+      .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+      .faq-media { max-width: 480px; }
+      .cf-inner { grid-template-columns: 1fr; min-height: auto; }
+      .cf-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 60px 40px; }
+      .cf-right { padding: 48px 40px 60px; }
+    }
+
+    @media (max-width: 600px) {
+      .top-nav { padding: 16px 20px; }
+
+      /* Nav CTAs */
+      .nav-work-btn { display: inline-flex; }
+      .btn-full-text { display: none; }
+      .btn-short-text { display: inline; }
+
+      /* Hero: leave 80px at bottom so white body shows behind floating nav */
+      .hero { height: calc(100vh - 80px); height: calc(100svh - 80px); min-height: 460px; }
+
+      /* Hero text: anchor near top, well above pills */
+      .hero-tagline { width: 92%; top: 110px; bottom: auto; transform: none; }
+      .hero-tagline p { font-size: clamp(36px, 9vw, 48px); }
+      .hero-mask-word { white-space: normal; }
+
+      /* Gravity pills: 20% larger than previous reduced size */
+      .gravity-pill { padding: 18px 41px; font-size: clamp(18px, 5.4vw, 26px); }
+
+      /* Bento: equal height cards */
+      .bento-grid { grid-template-columns: 1fr; grid-template-rows: unset; grid-auto-rows: 220px; }
+      .bento-card.wide { grid-column: span 1; }
+
+      /* Web Design flush image: stop covering headline */
+      .bento-img-flush { width: 55%; }
+
+      /* Toolkit: hide intro text, fix header layout */
+      .tools-dark-intro { display: none; }
+      .tools-dark-header { flex-direction: column; align-items: flex-start; gap: 0; }
+      .tools-nav { margin-left: 0; margin-top: 16px; }
+      /* Marquee fades: narrower on mobile */
+      .tools-marquee-wrap::before, .tools-marquee-wrap::after { width: 60px; }
+
+      /* Footer: reduce left padding so headline has room to wrap */
+      .cf-left { padding: 48px 24px; }
+      .cf-headline { font-size: clamp(28px, 8.5vw, 40px); }
+
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-section { padding: 60px 24px; }
+      .tool-card { width: 100px; }
+      .floating-nav { bottom: 16px; padding: 10px 16px; }
+      .floating-nav a { font-size: 12px; padding: 4px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── TOP NAV ── -->
+  <nav class="top-nav">
+    <a href="#" class="top-nav-name">
+      <strong>Lauren Moses</strong>
+      <span>Senior Creative</span>
+    </a>
+    <div></div>
+    <div class="nav-ctas">
+      <a href="#portfolio" class="btn-contact nav-work-btn">Work</a>
+      <a href="resume.pdf" download class="btn-contact"><span class="btn-full-text">Download Resume</span><span class="btn-short-text">Resume</span></a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+
+    <div class="hero-tagline">
+      <div class="hero-label-row">
+        <img src="Images/headshot-footer.jpg" alt="Lauren Moses" class="hero-avatar" />
+        <span class="ht-pill"><span class="ht-label">A creative chameleon</span></span>
+      </div>
+      <p>
+        <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.45s">Web, Brand</span></span>
+        <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.6s">&amp; Marketing</span></span>
+        <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.75s">Experiences.</span></span>
+      </p>
+    </div>
+
+    <!-- Physics pills -->
+    <div id="heroPhysics">
+      <div class="gravity-pill dark">Social Media</div>
+      <div class="gravity-pill lime">Animation</div>
+      <div class="gravity-pill teal">UI/UX</div>
+      <div class="gravity-pill lime">Web Design</div>
+      <div class="gravity-pill dark">Branding</div>
+      <div class="gravity-pill teal">Campaigns</div>
+    </div>
+  </section>
+
+
+  <!-- ── PHILOSOPHY (PARALLAX) ── -->
+  <section class="philosophy-section" id="about">
+    <div class="philosophy-sticky">
+
+      <!-- Parallax images -->
+      <div class="para-img para-left-1" data-speed="0.4" data-fade="-0.02">
+        <img src="Images/thumnails/Cover-para.jpg" alt="" />
+      </div>
+      <div class="para-img para-right-1" data-speed="0.35" data-fade="0.02">
+        <img src="Images/thumnails/google-cover.jpg" alt="" />
+      </div>
+      <div class="para-img para-left-2" data-speed="0.5" data-fade="0.22">
+        <img src="Images/thumnails/Cover-hollard.jpg" alt="" />
+      </div>
+      <div class="para-img para-right-2" data-speed="0.45" data-fade="0.26">
+        <img src="Images/thumnails/cover (guide).jpg" alt="" />
+      </div>
+      <div class="para-img para-left-3" data-speed="0.38" data-fade="0.44">
+        <img src="Images/thumnails/Cover-Fnb.png" alt="" />
+      </div>
+      <div class="para-img para-right-3" data-speed="0.42" data-fade="0.48">
+        <img src="Images/thumnails/MTN-Cover-Thumb.png" alt="" />
+      </div>
+
+      <!-- Text -->
+      <div class="philosophy-text-wrap">
+        <div class="pill-badge">Design Philosophy</div>
+        <p class="philosophy-text">
+          I craft work that blends strategy, design, and artistry
+          <span class="faded">- because great design lives everywhere at once.</span>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <div class="services-wrapper">
+  <section class="services-section" id="services">
+    <div class="services-left">
+      <div class="pill-badge reveal">What i do</div>
+      <h2 class="services-headline reveal reveal-delay-1">What I do</h2>
+      <p class="services-body reveal reveal-delay-2">Sixteen years across brand, motion, and digital - from full CI systems to animated campaigns, web products to display advertising. I work across the full design spectrum and know how to make things land.</p>
+      <a href="#portfolio" class="btn-pill reveal reveal-delay-3">View portfolio</a>
+    </div>
+
+    <div class="service-cards">
+      <div class="service-card reveal">
+        <div class="service-icon-box">
+          <!-- Brand / Identity: diamond + sparkle -->
+          <svg viewBox="0 0 28 28"><polygon points="14,3 25,11 20,25 8,25 3,11"/><line x1="14" y1="3" x2="14" y2="25"/><line x1="3" y1="11" x2="25" y2="11"/></svg>
+        </div>
+        <div class="service-card-text">
+          <h4>Brand &amp; Identity</h4>
+          <p>Corporate identities, logo systems, and visual languages built to last.</p>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon-box">
+          <!-- UI / Web: browser window -->
+          <svg viewBox="0 0 28 28"><rect x="3" y="5" width="22" height="18" rx="3"/><line x1="3" y1="11" x2="25" y2="11"/><circle cx="7" cy="8" r="1" fill="#060d0d" stroke="none"/><circle cx="11" cy="8" r="1" fill="#060d0d" stroke="none"/></svg>
+        </div>
+        <div class="service-card-text">
+          <h4>UI &amp; Web Design</h4>
+          <p>Websites, digital campaigns, and interfaces that are beautiful and functional.</p>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon-box">
+          <!-- Motion / Illustration: film clapperboard -->
+          <svg viewBox="0 0 28 28"><rect x="3" y="8" width="22" height="17" rx="2"/><polyline points="3,13 25,13"/><line x1="8" y1="8" x2="6" y2="3"/><line x1="14" y1="8" x2="12" y2="3"/><line x1="20" y1="8" x2="18" y2="3"/><line x1="3" y1="3" x2="25" y2="3"/></svg>
+        </div>
+        <div class="service-card-text">
+          <h4>Motion &amp; Illustration</h4>
+          <p>Animation, explainer videos, 3D, and illustration that bring stories to life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- ── BENEFITS ── -->
+  <section class="benefits-section">
+    <div class="benefits-header">
+      <div class="pill-badge reveal">About</div>
+      <h2 class="benefits-headline reveal reveal-delay-1">A bit about me</h2>
+      <p class="benefits-body reveal reveal-delay-2">16 years shaping brands, campaigns, and digital experiences - because creativity should never live in just one box.</p>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-card lime reveal">
+        <div class="bento-stat"><span class="counter" data-target="15">0</span>+</div>
+        <h3 style="font-size:18px; margin-top:4px; font-weight:600;">years experience</h3>
+        <p>Shaping brands, campaigns, and digital experiences across every medium.</p>
+        <img src="Images/Card-images/headshot.png" alt="Lauren Moses" class="bento-headshot" />
+      </div>
+
+      <div class="bento-card reveal reveal-delay-1" id="cardStackBento">
+        <h3>Brand. Motion.<br>Web. Illustration.</h3>
+        <div class="card-stack-wrap" id="cardStack">
+          <div class="cs-card" data-pos="0">
+            <img src="work-images/Google/google-cover.jpg" alt="Motion" />
+            <div class="cs-card-label"><strong>Motion</strong><span>Animation &amp; Film</span></div>
+          </div>
+          <div class="cs-card" data-pos="1">
+            <img src="work-images/MTN Made4U Portal/MTN-Cover-uai-1706x960.png" alt="Web Design" />
+            <div class="cs-card-label"><strong>Web Design</strong><span>UI &amp; Product</span></div>
+          </div>
+          <div class="cs-card" data-pos="2">
+            <img src="work-images/Hollard Change Maker/Cover.jpg" alt="Branding" />
+            <div class="cs-card-label"><strong>Branding</strong><span>Identity &amp; CI</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-2">
+        <h3>Web<br>Designs</h3>
+        <img src="Images/Card-images/Image (RelayRay app).png" alt="RelayRay app" class="bento-img-flush" />
+      </div>
+
+      <div class="bento-card reveal">
+        <div class="bento-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <h3>Detail-driven,<br>deadline-aware</h3>
+        <p>I care as much about craft as I do about output - design that holds up at any scale and meets the brief every time.</p>
+      </div>
+
+
+      <div class="bento-card reveal reveal-delay-2">
+        <h3>Cross-functional<br>collaborator</h3>
+        <p>Comfortable working with marketing, product, and dev teams - I translate between creative vision and practical delivery.</p>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-3">
+        <h3>Big agency<br>experience</h3>
+        <p>Built campaigns at top SA agencies alongside brands like Google, Nissan, MTN, and FNB - then led creative in-house.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TOOLS ── -->
+  <div class="tdk-cursor" id="tdkCursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <section class="tools-dark-section">
+    <div class="tools-dark-header">
+      <div>
+        <div class="pill-badge-dark">Tools</div>
+        <h2 class="tools-dark-headline reveal">My toolkit</h2>
+      </div>
+      <p class="tools-dark-intro reveal reveal-delay-2">Currently, my most-reached-for tools are <strong>Figma</strong>, then <strong>Photoshop</strong>, <strong>Webflow</strong>, and <strong>Claude</strong>. The toolbox is much larger than this - but these are the ones that never leave the dock.</p>
+      <div class="tools-nav">
+        <button class="tools-nav-btn" id="toolsPrev" aria-label="Previous tools">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12L6 8l4-4"/></svg>
+        </button>
+        <button class="tools-nav-btn" id="toolsNext" aria-label="Next tools">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l4 4-4 4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="tools-marquee-wrap">
+      <div class="tools-marquee-track" id="toolsTrack">
+
+        <!-- Set 1 -->
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/Figma-logo.svg" alt="Figma" /></div><p class="tdk-name">Figma</p><p class="tdk-type">UI Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobephotoshop.svg" alt="Photoshop" /></div><p class="tdk-name">Photoshop</p><p class="tdk-type">Compositing</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeaftereffects.svg" alt="After Effects" /></div><p class="tdk-name">After Effects</p><p class="tdk-type">Motion Graphics</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeillustrator.svg" alt="Illustrator" /></div><p class="tdk-name">Illustrator</p><p class="tdk-type">Vector</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeindesign.svg" alt="InDesign" /></div><p class="tdk-name">InDesign</p><p class="tdk-type">Layout</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/webflow" alt="Webflow" /></div><p class="tdk-name">Webflow</p><p class="tdk-type">Web Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/framer" alt="Framer" /></div><p class="tdk-name">Framer</p><p class="tdk-type">Web Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/hubspot" alt="Hubspot" /></div><p class="tdk-name">Hubspot</p><p class="tdk-type">Marketing</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/asana" alt="Asana" /></div><p class="tdk-name">Asana</p><p class="tdk-type">Collaboration</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/midjourney.svg" alt="Midjourney" class="logo-force-white" /></div><p class="tdk-name">Midjourney</p><p class="tdk-type">AI Imagery</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/claude-color.svg" alt="Claude" /></div><p class="tdk-name">Claude</p><p class="tdk-type">AI Assistant</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/spline.png" alt="Spline" /></div><p class="tdk-name">Spline</p><p class="tdk-type">3D Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/Google_Antigravity-logo.svg" alt="Antigravity" /></div><p class="tdk-name">Antigravity</p><p class="tdk-type">AI Coding</p></div>
+
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/Figma-logo.svg" alt="Figma" /></div><p class="tdk-name">Figma</p><p class="tdk-type">UI Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobephotoshop.svg" alt="Photoshop" /></div><p class="tdk-name">Photoshop</p><p class="tdk-type">Compositing</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeaftereffects.svg" alt="After Effects" /></div><p class="tdk-name">After Effects</p><p class="tdk-type">Motion Graphics</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeillustrator.svg" alt="Illustrator" /></div><p class="tdk-name">Illustrator</p><p class="tdk-type">Vector</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/adobeindesign.svg" alt="InDesign" /></div><p class="tdk-name">InDesign</p><p class="tdk-type">Layout</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/webflow" alt="Webflow" /></div><p class="tdk-name">Webflow</p><p class="tdk-type">Web Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/framer" alt="Framer" /></div><p class="tdk-name">Framer</p><p class="tdk-type">Web Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/hubspot" alt="Hubspot" /></div><p class="tdk-name">Hubspot</p><p class="tdk-type">Marketing</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="https://cdn.simpleicons.org/asana" alt="Asana" /></div><p class="tdk-name">Asana</p><p class="tdk-type">Collaboration</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/midjourney.svg" alt="Midjourney" class="logo-force-white" /></div><p class="tdk-name">Midjourney</p><p class="tdk-type">AI Imagery</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/claude-color.svg" alt="Claude" /></div><p class="tdk-name">Claude</p><p class="tdk-type">AI Assistant</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/spline.png" alt="Spline" /></div><p class="tdk-name">Spline</p><p class="tdk-type">3D Design</p></div>
+        <div class="tdk-card"><div class="tdk-icon"><img src="Images/Logos/Google_Antigravity-logo.svg" alt="Antigravity" /></div><p class="tdk-name">Antigravity</p><p class="tdk-type">AI Coding</p></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="portfolio-header">
+      <div class="pill-badge reveal">Portfolio</div>
+      <h2 class="portfolio-headline reveal reveal-delay-1">A look at my work</h2>
+      <p class="portfolio-desc reveal reveal-delay-2">Each project tells a story - from brand systems to motion campaigns, web experiences to illustration. Browse through a selection of my favorite work.</p>
+    </div>
+
+    <div class="portfolio-filters reveal">
+      <button class="portfolio-filter-btn active" data-filter="all">All</button>
+      <button class="portfolio-filter-btn" data-filter="web">Web</button>
+      <button class="portfolio-filter-btn" data-filter="motion">Motion</button>
+      <button class="portfolio-filter-btn" data-filter="branding">Branding</button>
+      <button class="portfolio-filter-btn" data-filter="illustration">Illustration</button>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- WEB -->
+      <a href="work-detail.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/Paradigm Website/Cover-para.jpg" alt="Paradigm Website" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Paradigm Website</h3><span>UX &amp; Web Development</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="paradigm-onbrand.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/Paradigm OnBrand/cover .jpg" alt="Paradigm OnBrand" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Paradigm OnBrand</h3><span>Internal Design Hub</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="fnb.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/FNB/Cover-Fnb.png" alt="FNB UI Refresh" />
+        <div class="portfolio-item-meta"><div>
+          <h3>FNB UI Refresh</h3><span>UI Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="mtn-made4u.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/MTN Made4U Portal/MTN-Cover-uai-1706x960.png" alt="MTN Made4U Portal" />
+        <div class="portfolio-item-meta"><div>
+          <h3>MTN Made4U Portal</h3><span>Career Portal Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="relayray.html" class="portfolio-item reveal" data-category="web branding">
+        <img src="work-images/RelayRay/RelayCover.jpg" alt="RelayRay" />
+        <div class="portfolio-item-meta"><div>
+          <h3>RelayRay</h3><span>UX &amp; Brand Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="news24.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/News24/news24-cover-2.jpg" alt="News24" />
+        <div class="portfolio-item-meta"><div>
+          <h3>News24</h3><span>Motion Integration</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <!-- MOTION -->
+      <a href="google.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/Google/google-cover.jpg" alt="Google LookMeUp" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Google LookMeUp</h3><span>Animated Social Campaign</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="html5-banners.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/HTML5 Banners/cover.jpg" alt="HTML5 Banners" />
+        <div class="portfolio-item-meta"><div>
+          <h3>HTML5 Banners</h3><span>Interactive Display Ads</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="logo-animations.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/Logo animations/cover.png" alt="Logo Animations" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Logo Animations</h3><span>Motion Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="momentum-ci.html" class="portfolio-item reveal" data-category="motion illustration">
+        <img src="work-images/Momentum Digital CI/cover.jpg" alt="Momentum Digital CI" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Momentum Digital CI</h3><span>Brand in Motion</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="nivea.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/Nivea Product Shot/nivea-cover.jpg" alt="NIVEA Concept" />
+        <div class="portfolio-item-meta"><div>
+          <h3>NIVEA Concept</h3><span>3D Product Animation</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="social-media.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/Social Media/cover.jpg" alt="Social Media Campaigns" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Social Media</h3><span>Motion &amp; Video</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <!-- BRANDING -->
+      <a href="hollard.html" class="portfolio-item reveal" data-category="motion">
+        <img src="work-images/Hollard Change Maker/Cover.jpg" alt="Hollard Changemaker" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Hollard Changemaker</h3><span>Brand Campaign</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="paradigm-marketing.html" class="portfolio-item reveal" data-category="branding">
+        <img src="work-images/Paradigm Marketing Assets/cover.jpg" alt="Paradigm Rebrand" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Paradigm Rebrand</h3><span>Marketing &amp; Brand Assets</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="spline.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/Spline 3D - Web Interactive/spline-cover.jpeg" alt="Spline 3D Interactive" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Spline 3D</h3><span>Web Interactive</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="sixty60.html" class="portfolio-item reveal" data-category="web">
+        <img src="work-images/Sixty60/cover.jpg" alt="Sixty60 UI" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Sixty60</h3><span>UI Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="mtn-digital.html" class="portfolio-item reveal" data-category="motion branding">
+        <img src="work-images/MTN Digital Assets/Cover.png" alt="MTN Digital Assets" />
+        <div class="portfolio-item-meta"><div>
+          <h3>MTN Digital</h3><span>Digital Marketing Assets</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="pure.html" class="portfolio-item reveal" data-category="branding">
+        <img src="work-images/Pure/cover.jpg" alt="Pure Corporate Identity" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Pure</h3><span>Corporate Identity</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="nedbank.html" class="portfolio-item reveal" data-category="illustration">
+        <img src="work-images/Nedbank 3D characters/cover.jpg" alt="Nedbank 3D Characters" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Nedbank 3D</h3><span>Character Design</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="3d-illustrations.html" class="portfolio-item reveal" data-category="illustration">
+        <img src="work-images/3D Illustrations/Cover.jpg" alt="3D Illustrations" />
+        <div class="portfolio-item-meta"><div>
+          <h3>3D Illustrations</h3><span>Personal Collection</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="vector-avatars.html" class="portfolio-item reveal" data-category="illustration">
+        <img src="work-images/Vector avatars/marilyn-monroe.jpg" alt="Vector Portrait Illustrations" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Vector Portraits</h3><span>Pop Culture Icons</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="supersonic-masks.html" class="portfolio-item reveal" data-category="illustration branding">
+        <img src="work-images/Supersonic Masks/Supersonic-01-mask-1536x864.jpg" alt="Supersonic Masks" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Supersonic Masks</h3><span>Illustration Campaign</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="logos.html" class="portfolio-item reveal" data-category="branding">
+        <img src="work-images/Logos/cover.jpg" alt="Logo Design Collection" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Logo Collection</h3><span>Brand Identity</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+      <a href="energy-now.html" class="portfolio-item reveal" data-category="illustration">
+        <img src="work-images/Energy Now/01.jpg" alt="Energy Now Brand Film" />
+        <div class="portfolio-item-meta"><div>
+          <h3>Energy Now</h3><span>Brand Film</span>
+        </div></div>
+        <div class="bracket-tl"></div><div class="bracket-tr"></div>
+        <div class="bracket-bl"></div><div class="bracket-br"></div>
+      </a>
+
+
+    </div>
+  </section>
+
+
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section">
+    <div class="faq-inner">
+
+      <div class="faq-left">
+        <div class="pill-badge reveal">FAQ</div>
+        <h2 class="faq-headline reveal reveal-delay-1">Got questions?</h2>
+        <p class="faq-desc reveal reveal-delay-2">A few things worth knowing about my background and how I work.</p>
+
+
+      </div>
+
+      <div class="accordion reveal">
+
+        <div class="accordion-item open">
+          <button class="accordion-trigger">
+            <span>What's your background?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">15+ years in design - spanning agency work across branding, digital, and motion, with campaigns for brands like Google, Nissan, MTN, FNB, and Standard Bank. Currently Senior Marketing Designer at Paradigm, a U.S. SaaS fintech, where I drive digital marketing design across web, campaigns, and sales enablement.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>Do you prefer working solo or in a team?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Both - I'm comfortable working independently and thrive with focused solo output, but I genuinely value collaboration. Working alongside marketing, product, and dev teams brings out better work. I adapt to whatever the environment needs.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>What industries have you worked across?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Financial services (FNB, Hollard, Momentum), telco (MTN), tech (Google, Paradigm, RelayRay), automotive (Nissan), and FMCG. The variety is intentional - I adapt quickly to new sectors and build understanding of the audience fast.</div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>How do you approach new creative challenges?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">I start with understanding the problem, not jumping to aesthetics. Research, reference, audience context - then I push toward a concept that has a clear point of view. I'd rather produce one strong idea than five mediocre directions.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>How do you use AI in your work?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-content">Actively and intentionally. AI is woven into how I work - Midjourney for visual ideation, Claude for copy and problem-solving, AI coding tools for building things I wouldn't have been able to build solo. That said, I'm always in the driver's seat. The thinking, the art direction, the creative decisions - that's still me. AI handles the heavy lifting on execution, but it doesn't have taste, context, or judgement. I do. I treat it like any other tool: understand it well enough to get real value out of it, not just the surface stuff. The way I see it, ignoring these tools doesn't make you a purist - it just makes you slower. I'd rather stay sharp and know exactly what I'm working with.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT FOOTER ── -->
+  <section class="contact-footer" id="contact">
+    <div class="cf-inner">
+
+      <div class="cf-left">
+        <h2 class="cf-headline">
+          <span class="cf-line"><span class="cf-word">Great work</span></span>
+          <span class="cf-line"><span class="cf-word">starts with a</span></span>
+          <span class="cf-line"><span class="cf-word">conversation<span class="cf-dot">.</span></span></span>
+        </h2>
+        <p class="cf-sub cf-sub-anim">Let's talk.</p>
+      </div>
+
+      <div class="cf-right">
+        <div class="cf-profile">
+          <div class="cf-avatar">
+            <img src="Images/headshot-footer.jpg" alt="Lauren Moses" />
+          </div>
+          <div class="cf-profile-info">
+            <strong>Lauren Moses</strong>
+            <span>Senior Creative</span>
+            <div class="cf-socials">
+              <a href="https://instagram.com/lollamotion" target="_blank" class="cf-social-link" title="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="mailto:info@laurenmoses.com" class="cf-social-link" title="Email">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </a>
+              <a href="https://www.laurenmoses.com" target="_blank" class="cf-social-link" title="Portfolio">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cf-divider"></div>
+
+        <div class="cf-contact-block">
+          <p class="cf-contact-label">Contact me</p>
+          <a href="mailto:lauren.ipsum@gmail.com" class="cf-email">lauren.ipsum@gmail.com</a>
+          <p class="cf-contact-desc">Reach out if you're looking for a <strong>strategic, multi-disciplinary designer</strong> who can bring your vision to life.</p>
+          <a href="mailto:lauren.ipsum@gmail.com" class="cf-cta">
+            Get in touch
+            <span class="cf-cta-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cf-bar">
+      <span class="cf-bar-copy">© 2025 Lauren Moses. All rights reserved.</span>
+      <span class="cf-bar-love">Built with <svg class="cf-heart" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by me</span>
+    </div>
+  </section>
+
+  <!-- ── FLOATING BOTTOM NAV ── -->
+  <nav class="floating-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <script>
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ── Philosophy word blur reveal ──
+    function escHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function splitPhilosophyText() {
+      const textEl = document.querySelector('.philosophy-text');
+      if (!textEl) return 0;
+      const chunks = [];
+      textEl.childNodes.forEach(node => {
+        const isFaded = node.nodeType === Node.ELEMENT_NODE && node.classList.contains('faded');
+        const text = (node.textContent || '').trim();
+        text.split(/\s+/).forEach(word => {
+          if (word) chunks.push({ word, faded: isFaded });
+        });
+      });
+      let idx = 0;
+      textEl.innerHTML = chunks.map(({ word, faded }) =>
+        `<span class="philosophy-word${faded ? ' faded-word' : ''}" data-idx="${idx++}">${escHtml(word)}</span>`
+      ).join(' ');
+      return idx;
+    }
+
+    const totalPhilosophyWords = splitPhilosophyText();
+
+    function updateWordBlur(progress) {
+      const words = document.querySelectorAll('.philosophy-word');
+      if (!words.length) return;
+      const n = Math.max(totalPhilosophyWords - 1, 1);
+      words.forEach((word, i) => {
+        // Each word starts revealing at a staggered progress value (-0.05 → 0.40)
+        const reveal = -0.20 + (i / n) * 0.45;
+        const t = Math.max(0, Math.min(1, (progress - reveal) / 0.13));
+        word.style.filter = `blur(${((1 - t) * 14).toFixed(1)}px)`;
+        const maxOp = word.classList.contains('faded-word') ? 0.45 : 1;
+        word.style.opacity = (0.1 + t * (maxOp - 0.1)).toFixed(3);
+      });
+    }
+
+    // ── Parallax images ──
+    const philosophySection = document.querySelector('.philosophy-section');
+    const paraImgs = document.querySelectorAll('.para-img[data-speed]');
+    function updateParallax() {
+      if (!philosophySection) return;
+      const rect = philosophySection.getBoundingClientRect();
+      const sectionH = philosophySection.offsetHeight;
+      const viewH = window.innerHeight;
+      const progress = Math.max(0, Math.min(1, (-rect.top) / (sectionH - viewH)));
+
+      paraImgs.forEach(img => {
+        const speed = parseFloat(img.dataset.speed);
+        const fade  = parseFloat(img.dataset.fade || 0);
+        const translateY = (progress - 0.5) * speed * 600;
+        const opacity = Math.max(0, Math.min(1, (progress - fade) / 0.14));
+        img.style.transform = `translateY(${translateY}px)`;
+        img.style.opacity = opacity.toFixed(3);
+      });
+
+      updateWordBlur(progress);
+    }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    updateParallax();
+
+    // ── Hero portrait parallax (scroll + mouse, handled in cursor block below) ──
+    const heroPortrait = document.querySelector('.hero-portrait');
+    const heroTitle    = document.querySelector('.hero-title');
+    const cfHeadline   = document.querySelector('.cf-headline');
+    const contactFooter = document.querySelector('.contact-footer');
+
+    // ── Footer headline scroll-in animation ──
+    const cfSub = document.querySelector('.cf-sub-anim');
+    const cfObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          cfObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    if (cfHeadline) cfObserver.observe(cfHeadline);
+    if (cfSub) cfObserver.observe(cfSub);
+
+    // ── Counter animation ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1400;
+      const start = performance.now();
+      (function step(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(ease * target);
+        if (t < 1) requestAnimationFrame(step);
+      })(start);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.counter').forEach(animateCounter);
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.bento-card').forEach(card => counterObserver.observe(card));
+
+    // ── Global custom cursor ──
+    const tdkCursor = document.getElementById('tdkCursor');
+    const cursorDot = document.getElementById('cursorDot');
+
+    // Smooth trailing circle via rAF lerp
+    let mouseX = 0, mouseY = 0, circX = 0, circY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top  = mouseY + 'px';
+      cursorDot.classList.add('on');
+      tdkCursor.classList.add('on');
+    });
+
+    (function animCircle() {
+      circX += (mouseX - circX) * 0.12;
+      circY += (mouseY - circY) * 0.12;
+      tdkCursor.style.left = circX + 'px';
+      tdkCursor.style.top  = circY + 'px';
+      requestAnimationFrame(animCircle);
+    })();
+
+    // Cursor states: big on tool cards, hover on links/buttons, dark on dark sections
+    const darkSections = document.querySelectorAll('.tools-dark-section, .philosophy-section, .contact-footer');
+    darkSections.forEach(sec => {
+      sec.addEventListener('mouseenter', () => tdkCursor.classList.add('dark'));
+      sec.addEventListener('mouseleave', () => tdkCursor.classList.remove('dark'));
+    });
+
+    document.querySelectorAll('.tdk-card').forEach(card => {
+      card.addEventListener('mouseenter', () => { tdkCursor.classList.add('big'); cursorDot.classList.add('hover'); });
+      card.addEventListener('mouseleave', () => { tdkCursor.classList.remove('big'); cursorDot.classList.remove('hover'); });
+    });
+
+    document.querySelectorAll('a, button, .portfolio-item, .accordion-trigger, .btn-pill, .btn-contact').forEach(el => {
+      el.addEventListener('mouseenter', () => { tdkCursor.classList.add('hover'); cursorDot.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { tdkCursor.classList.remove('hover'); cursorDot.classList.remove('hover'); });
+    });
+
+    // ── Tools marquee — JS-driven auto-scroll + prev/next ──
+    (function() {
+      const track = document.getElementById('toolsTrack');
+      const prevBtn = document.getElementById('toolsPrev');
+      const nextBtn = document.getElementById('toolsNext');
+      if (!track) return;
+      const SPEED = 0.55;
+      const STEP  = 189; // card width (175) + gap (14)
+      let pos = 0;
+      let paused = false;
+      let resumeTimer = null;
+      let halfWidth = 0;
+
+      function init() {
+        halfWidth = track.scrollWidth / 2;
+        requestAnimationFrame(tick);
+      }
+
+      function tick() {
+        if (!paused) {
+          pos -= SPEED;
+          if (Math.abs(pos) >= halfWidth) pos = 0;
+          track.style.transform = `translateX(${pos}px)`;
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function step(dir) {
+        paused = true;
+        clearTimeout(resumeTimer);
+        track.style.transition = 'transform 0.38s cubic-bezier(0.25, 1, 0.5, 1)';
+        pos += dir * STEP;
+        if (pos > 0) pos = 0;
+        if (Math.abs(pos) >= halfWidth) pos = -(halfWidth - 20);
+        track.style.transform = `translateX(${pos}px)`;
+        setTimeout(() => { track.style.transition = ''; }, 380);
+        resumeTimer = setTimeout(() => { paused = false; }, 4000);
+      }
+
+      prevBtn.addEventListener('click', () => step(1));
+      nextBtn.addEventListener('click', () => step(-1));
+      init();
+    })();
+
+    // ── Bento card 3D tilt ──
+    document.querySelectorAll('.bento-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const y = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(10px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    // ── Portfolio filter ──
+    (function() {
+      const btns  = document.querySelectorAll('.portfolio-filter-btn');
+      const items = document.querySelectorAll('.portfolio-item');
+
+      function applyFilter(filter) {
+        items.forEach(item => {
+          const cats = (item.dataset.category || '').split(' ');
+          const show = filter === 'all' || cats.includes(filter);
+          item.style.display = show ? '' : 'none';
+        });
+      }
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      // Default: show all
+      applyFilter('all');
+    })();
+
+    // ── Portfolio item tilt ──
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('mousemove', e => {
+        const r = item.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const y = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        item.style.transform = `perspective(500px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-4px) scale(1.02)`;
+      });
+      item.addEventListener('mouseleave', () => { item.style.transform = ''; });
+    });
+
+    // ── Hero mouse parallax ──
+    let heroMouseX = 0, heroMouseY = 0;
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection && heroPortrait) {
+      heroSection.addEventListener('mousemove', e => {
+        heroMouseX = (e.clientX / window.innerWidth  - 0.5);
+        heroMouseY = (e.clientY / window.innerHeight - 0.5);
+      });
+    }
+
+    function updateHeroParallaxCombined() {
+      const sy = window.scrollY;
+      if (heroPortrait) {
+        heroPortrait.style.transform = `translateY(${sy * 0.3}px) translate(${heroMouseX * 18}px, ${heroMouseY * 12}px)`;
+      }
+      if (heroTitle) {
+        heroTitle.style.transform = `translateY(${-sy * 0.18}px) translate(${heroMouseX * -10}px, ${heroMouseY * -6}px)`;
+      }
+    }
+    window.addEventListener('scroll', updateHeroParallaxCombined, { passive: true });
+    heroSection && heroSection.addEventListener('mousemove', updateHeroParallaxCombined);
+
+    // Service cards handled via CSS :hover
+
+    // ── Gravity pills (no canvas - scroll-safe) ──
+    (function initGravityPills() {
+      if (!window.Matter) return;
+      const { Engine, Runner, Bodies, World, Body, Constraint } = Matter;
+
+      const section = document.querySelector('.hero');
+      const container = document.getElementById('heroPhysics');
+      if (!section || !container) return;
+
+      const W = section.offsetWidth;
+      const H = section.offsetHeight;
+
+      const isMobile = W < 700;
+      const engine = Engine.create({ gravity: { x: 0, y: isMobile ? 3.0 : 1.3 } });
+
+      // Walls - floor + sides; mobile: full width, desktop: right 40%
+      const t = 60;
+      const zoneLeft = isMobile ? 0 : W * 0.60;
+      // On mobile, floor sits 90px above section bottom (clears floating nav + 30px buffer)
+      const floorY = H;
+      World.add(engine.world, [
+        Bodies.rectangle(W / 2, floorY + t / 2, W * 3, t, { isStatic: true, friction: 1 }),
+        Bodies.rectangle(zoneLeft - t / 2, H / 2, t, H * 3, { isStatic: true, friction: 0.3 }),
+        Bodies.rectangle(W + t / 2, H / 2, t, H * 3, { isStatic: true }),
+      ]);
+
+      // Create physics bodies - pills drop within right 40% zone
+      const pills = Array.from(container.querySelectorAll('.gravity-pill'));
+      const pillBodies = pills.map((pill, i) => {
+        const w = pill.offsetWidth || 160;
+        const h = pill.offsetHeight || 52;
+        const x = isMobile ? 20 + Math.random() * (W - 40) : zoneLeft + 20 + Math.random() * (W * 0.37);
+        const y = isMobile ? -(20 + i * 55 + Math.random() * 20) : -(80 + i * 110 + Math.random() * 40);
+        const angle = (Math.random() - 0.5) * 0.5;
+        const body = Bodies.rectangle(x, y, w * 0.86, h * 0.82, {
+          restitution: 0.28,
+          friction: 0.65,
+          frictionAir: isMobile ? 0.008 : 0.022,
+          density: 0.002,
+          angle,
+        });
+        World.add(engine.world, body);
+        return { pill, body };
+      });
+
+      // Drag via spring constraint - no canvas needed
+      let drag = null;
+
+      pills.forEach((pill, i) => {
+        pill.addEventListener('mousedown', (e) => {
+          const { body } = pillBodies[i];
+          const rect = container.getBoundingClientRect();
+          const mx = e.clientX - rect.left;
+          const my = e.clientY - rect.top;
+          // Offset from body centre to click point
+          const dx = mx - body.position.x;
+          const dy = my - body.position.y;
+          drag = {
+            body,
+            constraint: Constraint.create({
+              bodyA: body,
+              pointA: { x: dx, y: dy },
+              pointB: { x: mx, y: my },
+              stiffness: 0.15,
+              damping: 0,
+              length: 0,
+              render: { visible: false },
+            }),
+          };
+          World.add(engine.world, drag.constraint);
+          e.preventDefault();
+        });
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!drag) return;
+        const rect = container.getBoundingClientRect();
+        drag.constraint.pointB = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      }, { passive: true });
+
+      document.addEventListener('mouseup', () => {
+        if (drag) { World.remove(engine.world, drag.constraint); drag = null; }
+      });
+
+      Runner.run(Runner.create(), engine);
+
+      // Sync DOM positions each frame
+      (function tick() {
+        pillBodies.forEach(({ pill, body }) => {
+          const { x, y } = body.position;
+          pill.style.transform =
+            `translate(${x - pill.offsetWidth / 2}px, ${y - pill.offsetHeight / 2}px) rotate(${body.angle}rad)`;
+        });
+        requestAnimationFrame(tick);
+      })();
+    })();
+
+    // ── Accordion ──
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.accordion-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ── Adaptive nav: dark glass on dark sections, light glass on light sections ──
+    (function() {
+      const nav = document.querySelector('.top-nav');
+      if (!nav) return;
+
+      // Map each section selector to whether it has a dark background
+      const sectionMap = [
+        { sel: '.hero',               dark: true  },
+        { sel: '.philosophy-section', dark: false },
+        { sel: '.services-wrapper',   dark: true  },
+        { sel: '.benefits-section',   dark: false },
+        { sel: '.tools-dark-section', dark: true  },
+        { sel: '.portfolio-section',  dark: false },
+        { sel: '.faq-section',        dark: false },
+        { sel: '.contact-footer',     dark: true  },
+      ];
+
+      const sections = sectionMap
+        .map(({ sel, dark }) => ({ el: document.querySelector(sel), dark }))
+        .filter(({ el }) => el)
+        .sort((a, b) => a.el.offsetTop - b.el.offsetTop);
+
+      function updateNavTheme() {
+        const checkY = window.scrollY + nav.offsetHeight * 0.5;
+        let isDark = true; // default dark (hero at top)
+        for (const { el, dark } of sections) {
+          if (el.offsetTop <= checkY) isDark = dark;
+        }
+        nav.classList.toggle('light', !isDark);
+      }
+
+      window.addEventListener('scroll', updateNavTheme, { passive: true });
+      window.addEventListener('resize', updateNavTheme, { passive: true });
+      updateNavTheme();
+    })();
+
+    // ── Card Stack ──
+    (function() {
+      const stack = document.getElementById('cardStack');
+      if (!stack) return;
+
+      const allCards = [
+        { img: 'work-images/Google/google-cover.jpg',                     label: 'Motion',       sub: 'Animation & Film' },
+        { img: 'work-images/MTN Made4U Portal/MTN-Cover-uai-1706x960.png', label: 'Web Design',  sub: 'UI & Product' },
+        { img: 'work-images/Hollard Change Maker/Cover.jpg',              label: 'Branding',     sub: 'Identity & CI' },
+        { img: 'work-images/3D Illustrations/Cover.jpg',                  label: '3D',           sub: 'Cinema 4D' },
+        { img: 'work-images/RelayRay/486shots_so-1536x1152.png',          label: 'Web Design',   sub: 'Product & UI' },
+        { img: 'work-images/Paradigm OnBrand/OnBrand-01-1536x864.jpg',    label: 'Branding',     sub: 'Brand System' },
+      ];
+
+      let current = 3;
+      let animating = false;
+
+      function makeCard(data) {
+        const el = document.createElement('div');
+        el.className = 'cs-card';
+        el.dataset.pos = 'enter';
+        el.innerHTML = `<img src="${data.img}" alt="${data.label}" loading="lazy" /><div class="cs-card-label"><strong>${data.label}</strong><span>${data.sub}</span></div>`;
+        return el;
+      }
+
+      function advance() {
+        if (animating) return;
+        animating = true;
+
+        const cards = stack.querySelectorAll('.cs-card');
+        const front = cards[0], mid = cards[1], back = cards[2];
+
+        const newCard = makeCard(allCards[current % allCards.length]);
+        current++;
+        stack.appendChild(newCard);
+
+        newCard.getBoundingClientRect(); // force reflow
+
+        front.dataset.pos   = 'exit';
+        mid.dataset.pos     = '0';
+        back.dataset.pos    = '1';
+        newCard.dataset.pos = '2';
+
+        setTimeout(function() { front.remove(); animating = false; }, 580);
+      }
+
+      setInterval(advance, 2200);
+    })();
+
+  </script>
+
+</body>
+</html>
