@@ -1380,6 +1380,31 @@
     }
     .cf-cta:hover { box-shadow: 0 0 64px rgba(10, 188, 150, 0.5); transform: translateY(-1px); }
 
+    .cf-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: #0abc96;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 13px 24px 13px 28px;
+      border-radius: 40px;
+      width: fit-content;
+      border: 2px solid rgba(10, 188, 150, 0.5);
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .cf-cta-secondary:hover { border-color: #0abc96; transform: translateY(-1px); }
+
+    .cf-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
     .cf-cta-arrow {
       width: 28px; height: 28px;
       background: rgba(0,0,0,0.18);
@@ -2484,10 +2509,16 @@
           <p class="cf-contact-label">Contact me</p>
           <a href="mailto:lauren.ipsum@gmail.com" class="cf-email">lauren.ipsum@gmail.com</a>
           <p class="cf-contact-desc">Reach out if you're looking for a <strong>strategic, multi-disciplinary designer</strong> who can bring your vision to life.</p>
-          <a href="mailto:lauren.ipsum@gmail.com" class="cf-cta">
-            Get in touch
-            <span class="cf-cta-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
-          </a>
+          <div class="cf-cta-group">
+            <a href="mailto:lauren.ipsum@gmail.com" class="cf-cta">
+              Get in touch
+              <span class="cf-cta-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></span>
+            </a>
+            <a href="https://calendly.com/lauren-ipsum87/30min?back=1&month=2026-03" target="_blank" rel="noopener" class="cf-cta-secondary">
+              Book a call
+              <span class="cf-cta-arrow" style="background: rgba(10,188,150,0.12);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0abc96" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+            </a>
+          </div>
         </div>
       </div>
 
