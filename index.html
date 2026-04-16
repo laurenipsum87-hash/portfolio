@@ -22,6 +22,7 @@
   <meta name="keywords" content="senior designer, digital designer, marketing designer, brand design, motion graphics, UI design, Webflow, Figma, After Effects, Johannesburg, South Africa, SaaS, fintech, portfolio" />
   <meta name="author" content="Lauren Moses" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.laurenmoses.com/" />
 
   <!-- Open Graph / LinkedIn / Slack previews -->
   <meta property="og:type" content="website" />
@@ -29,12 +30,34 @@
   <meta property="og:title" content="Lauren Moses - Senior Digital & Marketing Designer" />
   <meta property="og:description" content="15+ years across brand, motion, web, and campaign design. Portfolio of work for Google, MTN, FNB, Nissan, Hollard and more." />
   <meta property="og:image" content="https://www.laurenmoses.com/Images/og-cover.jpg" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:site_name" content="Lauren Moses Portfolio" />
 
   <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lauren Moses - Senior Digital & Marketing Designer" />
   <meta name="twitter:description" content="15+ years across brand, motion, web, and campaign design." />
   <meta name="twitter:image" content="https://www.laurenmoses.com/Images/og-cover.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lauren Moses",
+    "jobTitle": "Lead Designer",
+    "description": "Senior Digital & Marketing Designer with 15+ years across brand, motion, web, and campaign design.",
+    "url": "https://www.laurenmoses.com/",
+    "image": "https://www.laurenmoses.com/Images/headshot-hero.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Johannesburg",
+      "addressCountry": "ZA"
+    },
+    "knowsAbout": ["Brand Design", "UI Design", "Motion Graphics", "Web Design", "Illustration", "Campaign Design"],
+    "sameAs": []
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
@@ -246,7 +269,7 @@
       white-space: nowrap;
     }
 
-    .hero-tagline p {
+    .hero-tagline h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(48px, 7.5vw, 108px);
       font-weight: 800;
@@ -1889,7 +1912,7 @@
 
       /* Hero text: anchor near top, well above pills */
       .hero-tagline { width: 92%; top: 110px; bottom: auto; transform: none; }
-      .hero-tagline p { font-size: clamp(36px, 9vw, 48px); }
+      .hero-tagline h1 { font-size: clamp(36px, 9vw, 48px); }
       .hero-mask-word { white-space: normal; }
 
       /* Gravity pills: 20% larger than previous reduced size */
@@ -1936,6 +1959,8 @@
     </div>
   </nav>
 
+  <main id="main-content">
+
   <!-- ── HERO ── -->
   <section class="hero" id="home">
 
@@ -1944,11 +1969,11 @@
         <img src="Images/headshot-footer.jpg" alt="Lauren Moses" class="hero-avatar" />
         <span class="ht-pill"><span class="ht-label">A creative chameleon</span></span>
       </div>
-      <p>
+      <h1>
         <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.45s">Web, Brand</span></span>
         <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.6s">&amp; Marketing</span></span>
         <span class="hero-mask-line"><span class="hero-mask-word" style="animation-delay:0.75s">Experiences.</span></span>
-      </p>
+      </h1>
     </div>
 
     <!-- Physics pills -->
@@ -2533,6 +2558,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ── FLOATING BOTTOM NAV ── -->
   <nav class="floating-nav">
     <a href="#home">Home</a>
@@ -2832,7 +2859,7 @@
       const t = 60;
       const zoneLeft = isMobile ? 0 : W * 0.60;
       // On mobile, floor sits 90px above section bottom (clears floating nav + 30px buffer)
-      const floorY = H;
+      const floorY = isMobile ? H - 90 : H;
       World.add(engine.world, [
         Bodies.rectangle(W / 2, floorY + t / 2, W * 3, t, { isStatic: true, friction: 1 }),
         Bodies.rectangle(zoneLeft - t / 2, H / 2, t, H * 3, { isStatic: true, friction: 0.3 }),
